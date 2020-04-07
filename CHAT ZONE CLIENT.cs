@@ -94,5 +94,17 @@ namespace SYSTEMDEMO
                 backgroundWorker2.CancelAsync();
             }
         }
+
+        private void sendbutton_Click_1(object sender, EventArgs e)
+        {
+            {
+                if (!string.IsNullOrEmpty(txtsend.Text))
+                {
+                    sendtxt = txtsend.Text;
+                    backgroundWorker2.RunWorkerAsync();
+                }
+                txtsend.Text = "";
+            }
+        }
     }
 }
