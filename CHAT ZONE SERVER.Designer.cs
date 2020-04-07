@@ -33,10 +33,12 @@
             this.PORTEXT = new System.Windows.Forms.Label();
             this.IP = new System.Windows.Forms.TextBox();
             this.PORT = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnstartserver = new System.Windows.Forms.Button();
             this.TxtShowMessenge = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtsend = new System.Windows.Forms.TextBox();
             this.sendbutton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // IPTEXT
@@ -45,7 +47,7 @@
             this.IPTEXT.BackColor = System.Drawing.Color.Transparent;
             this.IPTEXT.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IPTEXT.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.IPTEXT.Location = new System.Drawing.Point(143, 50);
+            this.IPTEXT.Location = new System.Drawing.Point(143, 42);
             this.IPTEXT.Name = "IPTEXT";
             this.IPTEXT.Size = new System.Drawing.Size(233, 47);
             this.IPTEXT.TabIndex = 0;
@@ -72,9 +74,9 @@
             this.IP.ForeColor = System.Drawing.SystemColors.Window;
             this.IP.Location = new System.Drawing.Point(421, 42);
             this.IP.Name = "IP";
-            this.IP.Size = new System.Drawing.Size(389, 55);
+            this.IP.Size = new System.Drawing.Size(232, 55);
             this.IP.TabIndex = 1;
-            this.IP.Text = "mashirotan.ddns.net";
+            this.IP.Text = "192.168.2.35";
             // 
             // PORT
             // 
@@ -89,34 +91,37 @@
             this.PORT.TabIndex = 1;
             this.PORT.Text = "1443";
             // 
-            // button1
+            // btnstartserver
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(844, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 53);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnstartserver.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnstartserver.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.btnstartserver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnstartserver.Location = new System.Drawing.Point(693, 42);
+            this.btnstartserver.Name = "btnstartserver";
+            this.btnstartserver.Size = new System.Drawing.Size(278, 112);
+            this.btnstartserver.TabIndex = 2;
+            this.btnstartserver.Text = "Start";
+            this.btnstartserver.UseVisualStyleBackColor = false;
+            this.btnstartserver.Click += new System.EventHandler(this.btnstartserver_Click);
             // 
             // TxtShowMessenge
             // 
             this.TxtShowMessenge.BackColor = System.Drawing.Color.Black;
+            this.TxtShowMessenge.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F);
+            this.TxtShowMessenge.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.TxtShowMessenge.Location = new System.Drawing.Point(35, 176);
             this.TxtShowMessenge.Multiline = true;
             this.TxtShowMessenge.Name = "TxtShowMessenge";
             this.TxtShowMessenge.Size = new System.Drawing.Size(953, 324);
             this.TxtShowMessenge.TabIndex = 3;
             // 
-            // textBox1
+            // txtsend
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 506);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(803, 36);
-            this.textBox1.TabIndex = 4;
+            this.txtsend.Location = new System.Drawing.Point(35, 506);
+            this.txtsend.Multiline = true;
+            this.txtsend.Name = "txtsend";
+            this.txtsend.Size = new System.Drawing.Size(803, 36);
+            this.txtsend.TabIndex = 4;
             // 
             // sendbutton
             // 
@@ -127,6 +132,15 @@
             this.sendbutton.TabIndex = 5;
             this.sendbutton.Text = "Send";
             this.sendbutton.UseVisualStyleBackColor = true;
+            this.sendbutton.Click += new System.EventHandler(this.sendbutton_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             // 
             // ChatApplication
             // 
@@ -136,9 +150,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1011, 550);
             this.Controls.Add(this.sendbutton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtsend);
             this.Controls.Add(this.TxtShowMessenge);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnstartserver);
             this.Controls.Add(this.PORT);
             this.Controls.Add(this.IP);
             this.Controls.Add(this.PORTEXT);
@@ -158,9 +172,11 @@
         private System.Windows.Forms.Label PORTEXT;
         private System.Windows.Forms.TextBox IP;
         private System.Windows.Forms.TextBox PORT;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnstartserver;
         private System.Windows.Forms.TextBox TxtShowMessenge;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtsend;
         private System.Windows.Forms.Button sendbutton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

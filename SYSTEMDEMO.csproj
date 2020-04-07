@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CHAT ZONE.cs">
+    <Compile Include="CHAT ZONE SERVER.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CHAT ZONE.Designer.cs">
-      <DependentUpon>CHAT ZONE.cs</DependentUpon>
+    <Compile Include="CHAT ZONE SERVER.Designer.cs">
+      <DependentUpon>CHAT ZONE SERVER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHAT ZONE CLIENT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHAT ZONE CLIENT.Designer.cs">
+      <DependentUpon>CHAT ZONE CLIENT.cs</DependentUpon>
     </Compile>
     <Compile Include="Mainform.cs">
       <SubType>Form</SubType>
@@ -60,8 +66,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CHAT ZONE.resx">
-      <DependentUpon>CHAT ZONE.cs</DependentUpon>
+    <EmbeddedResource Include="CHAT ZONE CLIENT.resx">
+      <DependentUpon>CHAT ZONE CLIENT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CHAT ZONE SERVER.resx">
+      <DependentUpon>CHAT ZONE SERVER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
