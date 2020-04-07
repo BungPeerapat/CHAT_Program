@@ -34,7 +34,7 @@
             // 
             // SB
             // 
-            this.SB.Location = new System.Drawing.Point(503, 147);
+            this.SB.Location = new System.Drawing.Point(340, 139);
             this.SB.Name = "SB";
             this.SB.Size = new System.Drawing.Size(263, 60);
             this.SB.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // CB
             // 
-            this.CB.Location = new System.Drawing.Point(503, 298);
+            this.CB.Location = new System.Drawing.Point(340, 321);
             this.CB.Name = "CB";
             this.CB.Size = new System.Drawing.Size(263, 60);
             this.CB.TabIndex = 0;
@@ -57,9 +57,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1396, 530);
+            this.ClientSize = new System.Drawing.Size(967, 539);
             this.Controls.Add(this.CB);
             this.Controls.Add(this.SB);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainServer";
             this.Text = "RATDEMO MADE BY MASHIRO [ ADMIN ]";
             this.ResumeLayout(false);
