@@ -14,14 +14,14 @@ using System.Windows.Forms;
 
 namespace SYSTEMDEMO
 {
-    public partial class ChatClientSize : Form
+    public partial class ChatApplicationClientSize : Form
     {
         public TcpClient client;
         private StreamReader SR;
         private StreamWriter SW;
         public string receive;
         public string sendtxt;
-        public ChatClientSize()
+        public ChatApplicationClientSize()
         {
             InitializeComponent();
         }

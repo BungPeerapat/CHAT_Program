@@ -19,7 +19,14 @@ namespace SYSTEMDEMO
 
         private void SB_Click(object sender, EventArgs e)
         {
+            ChatApplicationServer OpenChatServerSize = new ChatApplicationServer();
+            OpenChatServerSize.Show();
+        }
 
+        private void CB_Click(object sender, EventArgs e)
+        {
+            ChatApplicationClientSize OpenChatClientSize = new ChatApplicationClientSize();
+            OpenChatClientSize.Show();
         }
     }
 }

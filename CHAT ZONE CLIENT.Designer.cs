@@ -1,6 +1,6 @@
 ﻿namespace SYSTEMDEMO
 {
-    partial class ChatClientSize
+    partial class ChatApplicationClientSize
     {
         /// <summary>
         /// Required designer variable.
@@ -134,7 +134,7 @@
             this.TxtShowMessenge.Size = new System.Drawing.Size(953, 324);
             this.TxtShowMessenge.TabIndex = 11;
             // 
-            // ChatClientSize
+            // ChatApplicationClientSize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,7 +148,7 @@
             this.Controls.Add(this.IPCLIENT);
             this.Controls.Add(this.PORTEXT);
             this.Controls.Add(this.IPTEXT);
-            this.Name = "ChatClientSize";
+            this.Name = "ChatApplicationClientSize";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHAT ZONE CLIENT";
             this.ResumeLayout(false);

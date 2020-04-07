@@ -50,6 +50,7 @@
             this.CB.TabIndex = 0;
             this.CB.Text = "Client";
             this.CB.UseVisualStyleBackColor = true;
+            this.CB.Click += new System.EventHandler(this.CB_Click);
             // 
             // MainServer
             // 
