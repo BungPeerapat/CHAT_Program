@@ -20,7 +20,7 @@ namespace SYSTEMDEMO
         public StreamReader SR;
         public StreamWriter SW;
         public string receive;
-        public string sendtxt;
+        public string sendtxtclient;
         public ChatApplicationClientSize()
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace SYSTEMDEMO
         {
             if (!string.IsNullOrEmpty(txtsend.Text))
             {
-                sendtxt = txtsend.Text;
+                sendtxtclient = txtsend.Text;
                 backgroundWorker2.RunWorkerAsync();
             }
             txtsend.Text = "";
@@ -79,22 +79,21 @@ namespace SYSTEMDEMO
         {
             if (!string.IsNullOrEmpty(txtsend.Text))
             {
-                sendtxt = txtsend.Text;
+                sendtxtclient = txtsend.Text;
                 backgroundWorker2.RunWorkerAsync();
             }
             txtsend.Text = "";
         }
-
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
             if (client.Connected)
             {
                 try
                 {
-                    SW.WriteLine(sendtxt);
+                    SW.WriteLine(sendtxtclient);
                     this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtShowMessenge.AppendText("Me : " + sendtxt + "\n");
+                        this.TxtShowMessenge.AppendText("Me : " + sendtxtclient + "\n");
                     }));
                 }
                 catch
