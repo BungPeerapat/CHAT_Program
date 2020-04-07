@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnstartserver = new System.Windows.Forms.Button();
-            this.PORTCLIENT = new System.Windows.Forms.TextBox();
-            this.IPCLIENT = new System.Windows.Forms.TextBox();
+            this.Connect = new System.Windows.Forms.Button();
+            this.portclient = new System.Windows.Forms.TextBox();
+            this.ipclient = new System.Windows.Forms.TextBox();
             this.PORTEXT = new System.Windows.Forms.Label();
             this.IPTEXT = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -42,44 +42,44 @@
             this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
-            // btnstartserver
+            // Connect
             // 
-            this.btnstartserver.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnstartserver.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.btnstartserver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnstartserver.Location = new System.Drawing.Point(689, 27);
-            this.btnstartserver.Name = "btnstartserver";
-            this.btnstartserver.Size = new System.Drawing.Size(278, 112);
-            this.btnstartserver.TabIndex = 10;
-            this.btnstartserver.Text = "Connect";
-            this.btnstartserver.UseVisualStyleBackColor = false;
-            this.btnstartserver.Click += new System.EventHandler(this.btnstartserver_Click);
+            this.Connect.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Connect.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Connect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Connect.Location = new System.Drawing.Point(716, 27);
+            this.Connect.Name = "Connect";
+            this.Connect.Size = new System.Drawing.Size(251, 112);
+            this.Connect.TabIndex = 10;
+            this.Connect.Text = "Connect";
+            this.Connect.UseVisualStyleBackColor = false;
+            this.Connect.Click += new System.EventHandler(this.btnstartserver_Click);
             // 
-            // PORTCLIENT
+            // portclient
             // 
-            this.PORTCLIENT.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.PORTCLIENT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PORTCLIENT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PORTCLIENT.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.PORTCLIENT.ForeColor = System.Drawing.SystemColors.Window;
-            this.PORTCLIENT.Location = new System.Drawing.Point(283, 100);
-            this.PORTCLIENT.Name = "PORTCLIENT";
-            this.PORTCLIENT.Size = new System.Drawing.Size(105, 55);
-            this.PORTCLIENT.TabIndex = 8;
-            this.PORTCLIENT.Text = "1443";
+            this.portclient.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.portclient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.portclient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.portclient.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.portclient.ForeColor = System.Drawing.SystemColors.Window;
+            this.portclient.Location = new System.Drawing.Point(283, 100);
+            this.portclient.Name = "portclient";
+            this.portclient.Size = new System.Drawing.Size(105, 55);
+            this.portclient.TabIndex = 8;
+            this.portclient.Text = "1443";
             // 
-            // IPCLIENT
+            // ipclient
             // 
-            this.IPCLIENT.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.IPCLIENT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.IPCLIENT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IPCLIENT.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.IPCLIENT.ForeColor = System.Drawing.SystemColors.Window;
-            this.IPCLIENT.Location = new System.Drawing.Point(283, 27);
-            this.IPCLIENT.Name = "IPCLIENT";
-            this.IPCLIENT.Size = new System.Drawing.Size(400, 55);
-            this.IPCLIENT.TabIndex = 9;
-            this.IPCLIENT.Text = "mashirotan.ddns.net";
+            this.ipclient.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.ipclient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ipclient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ipclient.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.ipclient.ForeColor = System.Drawing.SystemColors.Window;
+            this.ipclient.Location = new System.Drawing.Point(283, 27);
+            this.ipclient.Name = "ipclient";
+            this.ipclient.Size = new System.Drawing.Size(400, 55);
+            this.ipclient.TabIndex = 9;
+            this.ipclient.Text = "127.0.0.1";
             // 
             // PORTEXT
             // 
@@ -143,9 +143,9 @@
             this.Controls.Add(this.sendbutton);
             this.Controls.Add(this.txtsend);
             this.Controls.Add(this.TxtShowMessenge);
-            this.Controls.Add(this.btnstartserver);
-            this.Controls.Add(this.PORTCLIENT);
-            this.Controls.Add(this.IPCLIENT);
+            this.Controls.Add(this.Connect);
+            this.Controls.Add(this.portclient);
+            this.Controls.Add(this.ipclient);
             this.Controls.Add(this.PORTEXT);
             this.Controls.Add(this.IPTEXT);
             this.Name = "ChatApplicationClientSize";
@@ -157,9 +157,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnstartserver;
-        private System.Windows.Forms.TextBox PORTCLIENT;
-        private System.Windows.Forms.TextBox IPCLIENT;
+        private System.Windows.Forms.Button Connect;
+        private System.Windows.Forms.TextBox portclient;
+        private System.Windows.Forms.TextBox ipclient;
         private System.Windows.Forms.Label PORTEXT;
         private System.Windows.Forms.Label IPTEXT;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;

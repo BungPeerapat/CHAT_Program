@@ -16,8 +16,8 @@ namespace SYSTEMDEMO
     public partial class ChatApplicationServer : Form
     {
         private TcpClient client;
-        private StreamReader SR;
-        private StreamWriter SW;
+        public StreamReader SR;
+        public StreamWriter SW;
         public string receive;
         public string sendtxt;
         public ChatApplicationServer()
@@ -33,9 +33,8 @@ namespace SYSTEMDEMO
             SR = new StreamReader(client.GetStream());
             SW = new StreamWriter(client.GetStream());
             SW.AutoFlush = true;
-            backgroundWorker1.RunWorkerAsync(SR);
+            backgroundWorker1.RunWorkerAsync();
             backgroundWorker2.WorkerSupportsCancellation = true;
-        
         }
 
         private void sendbutton_Click(object sender, EventArgs e)
@@ -69,7 +68,7 @@ namespace SYSTEMDEMO
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            while (client.Connected)
+            if (client.Connected)
             {
                 try
                 {

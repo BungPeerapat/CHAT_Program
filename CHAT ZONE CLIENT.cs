@@ -17,8 +17,8 @@ namespace SYSTEMDEMO
     public partial class ChatApplicationClientSize : Form
     {
         public TcpClient client;
-        private StreamReader SR;
-        private StreamWriter SW;
+        public StreamReader SR;
+        public StreamWriter SW;
         public string receive;
         public string sendtxt;
         public ChatApplicationClientSize()
@@ -29,7 +29,7 @@ namespace SYSTEMDEMO
         private void btnstartserver_Click(object sender, EventArgs e)
         {
             client = new TcpClient();
-            IPEndPoint ip_end = new IPEndPoint(IPAddress.Parse(IPCLIENT.Text), int.Parse(PORTCLIENT.Text));
+            IPEndPoint ip_end = new IPEndPoint(IPAddress.Parse(ipclient.Text), int.Parse(portclient.Text));
             try
             {
                 client.Connect(ip_end);
@@ -79,7 +79,7 @@ namespace SYSTEMDEMO
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            while (client.Connected)
+            if (client.Connected)
             {
                 try
                 {
