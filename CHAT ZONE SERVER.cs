@@ -56,7 +56,7 @@ namespace SYSTEMDEMO
                     receive = SR.ReadLine();
                     this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtShowMessenge.AppendText("Someone : " +receive+"\n");
+                        this.TxtShowMessenge.AppendText("Someone : " +receive+ "\n");
                     }));
                     receive = "";
                 }catch(Exception ex)

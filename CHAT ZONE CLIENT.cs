@@ -75,6 +75,16 @@ namespace SYSTEMDEMO
             }
         }
 
+        private void sendbutton_Click_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtsend.Text))
+            {
+                sendtxt = txtsend.Text;
+                backgroundWorker2.RunWorkerAsync();
+            }
+            txtsend.Text = "";
+        }
+
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
             if (client.Connected)
@@ -92,18 +102,6 @@ namespace SYSTEMDEMO
                     MessageBox.Show("Error");
                 }
                 backgroundWorker2.CancelAsync();
-            }
-        }
-
-        private void sendbutton_Click_1(object sender, EventArgs e)
-        {
-            {
-                if (!string.IsNullOrEmpty(txtsend.Text))
-                {
-                    sendtxt = txtsend.Text;
-                    backgroundWorker2.RunWorkerAsync();
-                }
-                txtsend.Text = "";
             }
         }
     }
