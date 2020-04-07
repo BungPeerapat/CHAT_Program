@@ -35,7 +35,8 @@ namespace SYSTEMDEMO
                 client.Connect(ip_end);
                 if (client.Connected)
                 {
-                    TxtShowMessenge.AppendText("Connected!" + "\n");
+                    MessageBox.Show("Connected!");
+                    Console.Beep();
                     SW.AutoFlush = true;
                     backgroundWorker1.RunWorkerAsync();
                     backgroundWorker2.WorkerSupportsCancellation = true;
