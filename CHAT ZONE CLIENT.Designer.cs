@@ -75,11 +75,11 @@
             this.ipclient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ipclient.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.ipclient.ForeColor = System.Drawing.SystemColors.Window;
-            this.ipclient.Location = new System.Drawing.Point(283, 27);
+            this.ipclient.Location = new System.Drawing.Point(274, 27);
             this.ipclient.Name = "ipclient";
-            this.ipclient.Size = new System.Drawing.Size(400, 55);
+            this.ipclient.Size = new System.Drawing.Size(430, 55);
             this.ipclient.TabIndex = 9;
-            this.ipclient.Text = "127.0.0.1";
+            this.ipclient.Text = "mashirotan.ddns.net";
             // 
             // PORTEXT
             // 
