@@ -16,5 +16,10 @@ namespace SYSTEMDEMO
         {
             InitializeComponent();
         }
+
+        private void SB_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

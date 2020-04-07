@@ -40,6 +40,7 @@
             this.SB.TabIndex = 0;
             this.SB.Text = "Server";
             this.SB.UseVisualStyleBackColor = true;
+            this.SB.Click += new System.EventHandler(this.SB_Click);
             // 
             // CB
             // 

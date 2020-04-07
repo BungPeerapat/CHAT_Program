@@ -1,6 +1,6 @@
 ﻿namespace SYSTEMDEMO
 {
-    partial class Form1
+    partial class ChatClientSize
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.sendbutton = new System.Windows.Forms.Button();
-            this.txtsend = new System.Windows.Forms.TextBox();
-            this.TxtShowMessenge = new System.Windows.Forms.TextBox();
             this.btnstartserver = new System.Windows.Forms.Button();
             this.PORTCLIENT = new System.Windows.Forms.TextBox();
             this.IPCLIENT = new System.Windows.Forms.TextBox();
@@ -38,35 +35,12 @@
             this.IPTEXT = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.sendbutton = new System.Windows.Forms.Button();
+            this.txtsend = new System.Windows.Forms.TextBox();
+            this.TxtShowMessenge = new System.Windows.Forms.TextBox();
+            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
-            // 
-            // sendbutton
-            // 
-            this.sendbutton.Font = new System.Drawing.Font("Franxurter Totally Medium", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendbutton.Location = new System.Drawing.Point(856, 491);
-            this.sendbutton.Name = "sendbutton";
-            this.sendbutton.Size = new System.Drawing.Size(127, 35);
-            this.sendbutton.TabIndex = 13;
-            this.sendbutton.Text = "Send";
-            this.sendbutton.UseVisualStyleBackColor = true;
-            this.sendbutton.Click += new System.EventHandler(this.sendbutton_Click);
-            // 
-            // txtsend
-            // 
-            this.txtsend.Location = new System.Drawing.Point(31, 491);
-            this.txtsend.Multiline = true;
-            this.txtsend.Name = "txtsend";
-            this.txtsend.Size = new System.Drawing.Size(803, 36);
-            this.txtsend.TabIndex = 12;
-            // 
-            // TxtShowMessenge
-            // 
-            this.TxtShowMessenge.BackColor = System.Drawing.Color.Black;
-            this.TxtShowMessenge.Location = new System.Drawing.Point(31, 161);
-            this.TxtShowMessenge.Multiline = true;
-            this.TxtShowMessenge.Name = "TxtShowMessenge";
-            this.TxtShowMessenge.Size = new System.Drawing.Size(953, 324);
-            this.TxtShowMessenge.TabIndex = 11;
             // 
             // btnstartserver
             // 
@@ -131,7 +105,36 @@
             this.IPTEXT.TabIndex = 7;
             this.IPTEXT.Text = "IP ADDESS :";
             // 
-            // Form1
+            // sendbutton
+            // 
+            this.sendbutton.Font = new System.Drawing.Font("Franxurter Totally Medium", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendbutton.Location = new System.Drawing.Point(855, 491);
+            this.sendbutton.Name = "sendbutton";
+            this.sendbutton.Size = new System.Drawing.Size(127, 35);
+            this.sendbutton.TabIndex = 13;
+            this.sendbutton.Text = "Send";
+            this.sendbutton.UseVisualStyleBackColor = true;
+            // 
+            // txtsend
+            // 
+            this.txtsend.Location = new System.Drawing.Point(30, 491);
+            this.txtsend.Multiline = true;
+            this.txtsend.Name = "txtsend";
+            this.txtsend.Size = new System.Drawing.Size(803, 36);
+            this.txtsend.TabIndex = 12;
+            // 
+            // TxtShowMessenge
+            // 
+            this.TxtShowMessenge.BackColor = System.Drawing.Color.Black;
+            this.TxtShowMessenge.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F);
+            this.TxtShowMessenge.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.TxtShowMessenge.Location = new System.Drawing.Point(30, 161);
+            this.TxtShowMessenge.Multiline = true;
+            this.TxtShowMessenge.Name = "TxtShowMessenge";
+            this.TxtShowMessenge.Size = new System.Drawing.Size(953, 324);
+            this.TxtShowMessenge.TabIndex = 11;
+            // 
+            // ChatClientSize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -145,7 +148,7 @@
             this.Controls.Add(this.IPCLIENT);
             this.Controls.Add(this.PORTEXT);
             this.Controls.Add(this.IPTEXT);
-            this.Name = "Form1";
+            this.Name = "ChatClientSize";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHAT ZONE CLIENT";
             this.ResumeLayout(false);
@@ -154,10 +157,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button sendbutton;
-        private System.Windows.Forms.TextBox txtsend;
-        private System.Windows.Forms.TextBox TxtShowMessenge;
         private System.Windows.Forms.Button btnstartserver;
         private System.Windows.Forms.TextBox PORTCLIENT;
         private System.Windows.Forms.TextBox IPCLIENT;
@@ -165,5 +164,10 @@
         private System.Windows.Forms.Label IPTEXT;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.Button sendbutton;
+        private System.Windows.Forms.TextBox txtsend;
+        private System.Windows.Forms.TextBox TxtShowMessenge;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker4;
     }
 }

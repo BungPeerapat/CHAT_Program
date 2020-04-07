@@ -7,18 +7,21 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.ServiceModel.Activities;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SYSTEMDEMO
 {
-    public partial class Form1 : Form
+    public partial class ChatClientSize : Form
     {
         public TcpClient client;
         private StreamReader SR;
         private StreamWriter SW;
-        public Form1()
+        public string receive;
+        public string sendtxt;
+        public ChatClientSize()
         {
             InitializeComponent();
         }
@@ -26,7 +29,7 @@ namespace SYSTEMDEMO
         private void btnstartserver_Click(object sender, EventArgs e)
         {
             client = new TcpClient();
-            IPEndPoint ip_end = new IPEndPoint(IPAddress.Parse(IPCLIENT.Text),int.Parse(PORTCLIENT.Text));
+            IPEndPoint ip_end = new IPEndPoint(IPAddress.Parse(IPCLIENT.Text), int.Parse(PORTCLIENT.Text));
             try
             {
                 client.Connect(ip_end);
@@ -39,15 +42,59 @@ namespace SYSTEMDEMO
                     backgroundWorker1.RunWorkerAsync();
                     backgroundWorker2.WorkerSupportsCancellation = true;
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void sendbutton_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(txtsend.Text))
+            {
+                sendtxt = txtsend.Text;
+                backgroundWorker2.RunWorkerAsync();
+            }
+            txtsend.Text = "";
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (client.Connected)
+            {
+                try
+                {
+                    receive = SR.ReadLine();
+                    this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
+                    {
+                        this.TxtShowMessenge.AppendText("Someone : " + receive + "\n");
+                    }));
+                    receive = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
 
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (client.Connected)
+            {
+                try
+                {
+                    SW.WriteLine(sendtxt);
+                    this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
+                    {
+                        this.TxtShowMessenge.AppendText("Me : " + sendtxt + "\n");
+                    }));
+                }
+                catch
+                {
+                    MessageBox.Show("Error");
+                }
+                backgroundWorker2.CancelAsync();
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SYSTEMDEMO
 {
-    partial class ChatApplication
+    partial class ChatApplicationServer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatApplication));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatApplicationServer));
             this.IPTEXT = new System.Windows.Forms.Label();
             this.PORTEXT = new System.Windows.Forms.Label();
             this.IP = new System.Windows.Forms.TextBox();
@@ -142,7 +142,7 @@
             // 
             this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             // 
-            // ChatApplication
+            // ChatApplicationServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,7 +158,7 @@
             this.Controls.Add(this.PORTEXT);
             this.Controls.Add(this.IPTEXT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "ChatApplication";
+            this.Name = "ChatApplicationServer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHAT ZONE [SERVER]";
             this.ResumeLayout(false);
