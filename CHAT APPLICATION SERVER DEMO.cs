@@ -28,8 +28,6 @@ namespace SYSTEMDEMO
 
         private void CreateServerBotton_Click(object sender, EventArgs e)
         {
-            try
-            {
                 TcpListener clientConnected = new TcpListener(IPAddress.Any, int.Parse(PORTSERVER.Text));
                 clientConnected.Start();
                 client = clientConnected.AcceptTcpClient();
@@ -42,11 +40,6 @@ namespace SYSTEMDEMO
                 Console.Beep();
                 MessageBox.Show("Create Complete.");
                 Console.Beep();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         async Task TimeDelay1Second()
