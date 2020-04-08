@@ -96,10 +96,21 @@ namespace SYSTEMDEMO
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e) //ตัวส่ง
         {
-            if (client.Connected)
+            try
             {
-                SW.WriteLine(sendtxtclient);
+                if (client.Connected)
+                {
+                    SW.WriteLine(sendtxtclient);
+                    this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
+                    {
+                        this.TxtMessageDemo.AppendText("Me : " + sendtxtclient + "\n");
+                    }));
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
+
         }
     }
 }
