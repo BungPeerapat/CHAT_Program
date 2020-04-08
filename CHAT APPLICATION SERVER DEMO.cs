@@ -36,10 +36,11 @@ namespace SYSTEMDEMO
             SW.AutoFlush = true;
             backgroundWorker1.RunWorkerAsync();
             backgroundWorker2.WorkerSupportsCancellation = true;
-            Console.Beep();
-            Console.Beep();
-            MessageBox.Show("Create Complete.");
-            Console.Beep();
+            if (client.Connected)
+            {
+                MessageBox.Show("Work!");
+                Console.Beep();
+            }
         }
 
         async Task TimeDelay1Second()
