@@ -40,7 +40,6 @@ namespace SYSTEMDEMO
             backgroundWorker2.WorkerSupportsCancellation = true;
             if (client.Connected)
             {
-                MessageBox.Show("Work!");
                 Console.Beep();
             }
         }

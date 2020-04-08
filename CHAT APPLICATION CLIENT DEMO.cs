@@ -39,7 +39,6 @@ namespace SYSTEMDEMO
                     Console.Beep();
                     SW.AutoFlush = true;
                     backgroundWorker1.RunWorkerAsync();
-                    backgroundWorker2.WorkerSupportsCancellation = true;
                 }
             }
             catch (Exception ex)
@@ -119,7 +118,6 @@ namespace SYSTEMDEMO
             }
 
         }
-
         private void SendTextDemo_TextChanged(object sender, EventArgs e)
         {
 
