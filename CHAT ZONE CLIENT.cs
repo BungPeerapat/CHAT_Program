@@ -20,8 +20,7 @@ namespace SYSTEMDEMO
         public StreamReader SR;
         public StreamWriter SW;
         public string receive;
-        public string sendtxtclient;
-        private string sendtxt;
+        public string sendtxt;
         public ChatApplicationClientSize()
         {
             InitializeComponent();
@@ -70,10 +69,10 @@ namespace SYSTEMDEMO
             {
                 try
                 {
-                    SW.WriteLine(sendtxtclient);
+                    SW.WriteLine(sendtxt);
                     this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtShowMessenge.AppendText("Me : " + sendtxtclient + "\n");
+                        this.TxtShowMessenge.AppendText("Me : " + sendtxt + "\n");
                     }));
                 }
                 catch
