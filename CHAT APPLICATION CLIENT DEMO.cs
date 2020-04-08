@@ -47,14 +47,13 @@ namespace SYSTEMDEMO
             }
         }
 
-        private void SendBottonDemo_Click(object sender, EventArgs e)
+        async private void SendBottonDemo_Click(object sender, EventArgs e)
         {
             if (client.Connected)
             {
                 if (!string.IsNullOrEmpty(SendTextDemo.Text))
                 {
                     sendtxtclient = SendTextDemo.Text;
-                    SW.WriteLine(sendtxtclient);
                     backgroundWorker2.RunWorkerAsync();
                     Console.Beep();
                 }
@@ -66,6 +65,7 @@ namespace SYSTEMDEMO
                 Console.Beep();
                 Console.Beep();
             }
+            await TimeDelay1Second();
             SendTextDemo.Text = "";
         }
         async Task TimeDelay1Second() //Delay Time
@@ -73,7 +73,7 @@ namespace SYSTEMDEMO
             await Task.Delay(1000);
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //1 เป็นตัวรับ
+        async private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //1 เป็นตัวรับ
         {
             while (client.Connected)
             {
@@ -89,12 +89,17 @@ namespace SYSTEMDEMO
                 {
                     MessageBox.Show(ex.Message);
                 }
+                await TimeDelay1Second();
+                receive = "";
             }
         }
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e) //ตัวส่ง
         {
-
+            if (client.Connected)
+            {
+                SW.WriteLine(sendtxtclient);
+            }
         }
     }
 }
