@@ -77,7 +77,8 @@
             this.ipclient.Name = "ipclient";
             this.ipclient.Size = new System.Drawing.Size(430, 55);
             this.ipclient.TabIndex = 9;
-            this.ipclient.Text = "mashirotan.ddns.net";
+            this.ipclient.Text = "127.0.0.1";
+            this.ipclient.TextChanged += new System.EventHandler(this.ipclient_TextChanged);
             // 
             // PORTEXT
             // 
@@ -135,6 +136,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "SEND";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ChatApplicationClientSize
             // 

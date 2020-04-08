@@ -41,7 +41,7 @@ namespace SYSTEMDEMO
                     backgroundWorker1.RunWorkerAsync();
                     backgroundWorker2.WorkerSupportsCancellation = true;
                 }
-                if (backgroundWorker2.WorkerSupportsCancellation == false)
+                if (backgroundWorker2.WorkerSupportsCancellation == true)
                 {
                     Console.Beep();
                     Console.Beep();
@@ -89,6 +89,25 @@ namespace SYSTEMDEMO
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void ipclient_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtsend.Text))
+            {
+                if (client.Connected)
+                {
+                    Console.Beep();
+                    sendtxt = txtsend.Text;
+                    backgroundWorker2.RunWorkerAsync();
+                }
+                txtsend.Text = "";
             }
         }
     }
