@@ -49,19 +49,44 @@ namespace SYSTEMDEMO
             }
         }
 
-        private void SendTextBotton_Click(object sender, EventArgs e)
+        async Task TimeDelay1Second()
+        {
+            await Task.Delay(1000);
+        }
+        async private void SendTextBotton_Click(object sender, EventArgs e)
         {
             if (client.Connected)
             {
                 if (!string.IsNullOrEmpty(SendTextDemo.Text))
                 {
                     sendtxtclient = SendTextDemo.Text;
+                    backgroundWorker2.RunWorkerAsync();
                 }
             }
             else
             {
                 MessageBox.Show("You don't have any Connecttion.");            
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //ตัวรับ
+        {
+            while (client.Connected)
+            {
+                try
+                {
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e) //ตัวส่ง
+        {
+
         }
     }
 }
