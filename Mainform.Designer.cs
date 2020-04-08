@@ -31,6 +31,7 @@
             this.SB = new System.Windows.Forms.Button();
             this.CB = new System.Windows.Forms.Button();
             this.ClientDemobotton = new System.Windows.Forms.Button();
+            this.ServerDemobotton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SB
@@ -63,12 +64,23 @@
             this.ClientDemobotton.UseVisualStyleBackColor = true;
             this.ClientDemobotton.Click += new System.EventHandler(this.ClientDemobotton_Click);
             // 
+            // ServerDemobotton
+            // 
+            this.ServerDemobotton.Location = new System.Drawing.Point(250, 12);
+            this.ServerDemobotton.Name = "ServerDemobotton";
+            this.ServerDemobotton.Size = new System.Drawing.Size(454, 99);
+            this.ServerDemobotton.TabIndex = 2;
+            this.ServerDemobotton.Text = "ServerDemo";
+            this.ServerDemobotton.UseVisualStyleBackColor = true;
+            this.ServerDemobotton.Click += new System.EventHandler(this.ServerDemobotton_Click);
+            // 
             // MainServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(967, 539);
+            this.Controls.Add(this.ServerDemobotton);
             this.Controls.Add(this.ClientDemobotton);
             this.Controls.Add(this.CB);
             this.Controls.Add(this.SB);
@@ -84,6 +96,7 @@
         private System.Windows.Forms.Button SB;
         private System.Windows.Forms.Button CB;
         private System.Windows.Forms.Button ClientDemobotton;
+        private System.Windows.Forms.Button ServerDemobotton;
     }
 }
 

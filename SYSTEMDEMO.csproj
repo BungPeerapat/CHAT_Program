@@ -62,6 +62,12 @@
     <Compile Include="CHAT ZONE CLIENT.Designer.cs">
       <DependentUpon>CHAT ZONE CLIENT.cs</DependentUpon>
     </Compile>
+    <Compile Include="CHAT APPLICATION CLIENT DEMO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHAT APPLICATION CLIENT DEMO.Designer.cs">
+      <DependentUpon>CHAT APPLICATION CLIENT DEMO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mainform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CHAT APPLICATION CLIENT DEMO.resx">
+      <DependentUpon>CHAT APPLICATION CLIENT DEMO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CHAT ZONE CLIENT.resx">
       <DependentUpon>CHAT ZONE CLIENT.cs</DependentUpon>
     </EmbeddedResource>

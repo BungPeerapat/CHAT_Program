@@ -40,6 +40,7 @@
             // 
             // TxtMessageDemo
             // 
+            this.TxtMessageDemo.Font = new System.Drawing.Font("Franxurter Totally Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMessageDemo.Location = new System.Drawing.Point(5, 73);
             this.TxtMessageDemo.Multiline = true;
             this.TxtMessageDemo.Name = "TxtMessageDemo";
@@ -74,6 +75,7 @@
             // 
             // SendTextDemo
             // 
+            this.SendTextDemo.Font = new System.Drawing.Font("Franxurter Totally Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SendTextDemo.Location = new System.Drawing.Point(4, 561);
             this.SendTextDemo.Multiline = true;
             this.SendTextDemo.Name = "SendTextDemo";
