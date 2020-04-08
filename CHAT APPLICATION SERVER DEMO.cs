@@ -28,6 +28,7 @@ namespace SYSTEMDEMO
 
         private void CreateServerBotton_Click(object sender, EventArgs e)
         {
+            Console.Bepp();
             TcpListener listener = new TcpListener(IPAddress.Any, int.Parse(PORTSERVER.Text));
             listener.Start();
             client = listener.AcceptTcpClient();
