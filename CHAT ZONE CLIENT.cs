@@ -16,7 +16,7 @@ namespace SYSTEMDEMO
 {
     public partial class ChatApplicationClientSize : Form
     {
-        public TcpClient client;
+        private TcpClient client;
         public StreamReader SR;
         public StreamWriter SW;
         public string receive;
@@ -44,7 +44,7 @@ namespace SYSTEMDEMO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error");
             }
         }
         private void button1_Click(object sender, EventArgs e)
