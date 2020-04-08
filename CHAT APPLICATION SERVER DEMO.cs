@@ -91,9 +91,9 @@ namespace SYSTEMDEMO
 
         async private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e) //ตัวส่ง
         {
-            try
+            if (client.Connected)
             {
-                if (client.Connected)
+                try
                 {
                     SW.WriteLine(SendTextDemo.Text);
                     this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
@@ -102,14 +102,14 @@ namespace SYSTEMDEMO
                     }));
                     await Time05Delay();
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("SYSTEM : Client Don't Connected");
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("SYSTEM : Client Don't Connected");
             }
         }
     }
