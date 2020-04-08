@@ -94,6 +94,10 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            // 
             // CHAT_APPLICATION_CLIENT_DEMO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

@@ -66,6 +66,12 @@ namespace SYSTEMDEMO
                 Console.Beep();
                 Console.Beep();
             }
+            SendTextDemo.Text = "";
+        }
+
+        async TimeDelay1Second()
+        {
+
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //1 เป็นตัวรับ
@@ -74,13 +80,22 @@ namespace SYSTEMDEMO
             {
                 try
                 {
-                    SR.ReadLine(receive);
+                    receive = SR.ReadLine();
+                    this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
+                    {
+                        this.TxtMessageDemo.AppendText("Someone : " + receive + "\n");
+                    }));
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e) //ตัวส่ง
+        {
+
         }
     }
 }
