@@ -90,7 +90,12 @@ namespace SYSTEMDEMO
             }
         }
 
-        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e) //ตัวส่ง
+        async Task Time05Delay()
+        {
+            await Task.Delay(500);
+        }
+
+        async private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e) //ตัวส่ง
         {
             try
             {
@@ -101,6 +106,7 @@ namespace SYSTEMDEMO
                     {
                         this.TxtMessageDemo.AppendText("Me : " + SendTextDemo + "\n");
                     }));
+                    await Time05Delay();
                 }
                 else
                 {
