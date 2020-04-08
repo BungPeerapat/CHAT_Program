@@ -57,6 +57,7 @@ namespace SYSTEMDEMO
         {
             if (txtsend != null)
             {
+                Console.Beep();
                 sendtxt = txtsend.Text;
                 backgroundWorker2.RunWorkerAsync();
             }
@@ -74,8 +75,7 @@ namespace SYSTEMDEMO
                     {
                         this.TxtShowMessenge.AppendText("Me : " + sendtxt + "\n");
                     }));
-                }
-                catch
+                }catch
                 {
                     MessageBox.Show("Error");
                 }
