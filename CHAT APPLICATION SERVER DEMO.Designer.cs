@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Txt = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtMessageDemo = new System.Windows.Forms.TextBox();
+            this.SendTextDemo = new System.Windows.Forms.TextBox();
             this.SendTextBotton = new System.Windows.Forms.Button();
             this.IPSERVER = new System.Windows.Forms.TextBox();
             this.PORTSERVER = new System.Windows.Forms.TextBox();
             this.CreateServerBotton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
-            // Txt
+            // TxtMessageDemo
             // 
-            this.Txt.Font = new System.Drawing.Font("Franxurter Totally Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt.Location = new System.Drawing.Point(12, 67);
-            this.Txt.Multiline = true;
-            this.Txt.Name = "Txt";
-            this.Txt.Size = new System.Drawing.Size(947, 419);
-            this.Txt.TabIndex = 0;
+            this.TxtMessageDemo.Font = new System.Drawing.Font("Franxurter Totally Medium", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMessageDemo.Location = new System.Drawing.Point(12, 67);
+            this.TxtMessageDemo.Multiline = true;
+            this.TxtMessageDemo.Name = "TxtMessageDemo";
+            this.TxtMessageDemo.Size = new System.Drawing.Size(947, 419);
+            this.TxtMessageDemo.TabIndex = 0;
             // 
-            // textBox2
+            // SendTextDemo
             // 
-            this.textBox2.Font = new System.Drawing.Font("Franxurter Totally Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(12, 492);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(798, 40);
-            this.textBox2.TabIndex = 1;
+            this.SendTextDemo.Font = new System.Drawing.Font("Franxurter Totally Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SendTextDemo.Location = new System.Drawing.Point(12, 492);
+            this.SendTextDemo.Multiline = true;
+            this.SendTextDemo.Name = "SendTextDemo";
+            this.SendTextDemo.Size = new System.Drawing.Size(798, 40);
+            this.SendTextDemo.TabIndex = 1;
             // 
             // SendTextBotton
             // 
@@ -91,6 +93,7 @@
             this.CreateServerBotton.TabIndex = 5;
             this.CreateServerBotton.Text = "Create";
             this.CreateServerBotton.UseVisualStyleBackColor = true;
+            this.CreateServerBotton.Click += new System.EventHandler(this.CreateServerBotton_Click);
             // 
             // CHAT_APPLICATION_SERVER_DEMO
             // 
@@ -102,8 +105,8 @@
             this.Controls.Add(this.PORTSERVER);
             this.Controls.Add(this.IPSERVER);
             this.Controls.Add(this.SendTextBotton);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.Txt);
+            this.Controls.Add(this.SendTextDemo);
+            this.Controls.Add(this.TxtMessageDemo);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Name = "CHAT_APPLICATION_SERVER_DEMO";
             this.Text = "CHAT APPLICATION SERVER DEMO";
@@ -114,11 +117,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Txt;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtMessageDemo;
+        private System.Windows.Forms.TextBox SendTextDemo;
         private System.Windows.Forms.Button SendTextBotton;
         private System.Windows.Forms.TextBox IPSERVER;
         private System.Windows.Forms.TextBox PORTSERVER;
         private System.Windows.Forms.Button CreateServerBotton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }
