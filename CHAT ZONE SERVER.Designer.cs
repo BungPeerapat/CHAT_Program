@@ -76,7 +76,7 @@
             this.IP.Name = "IP";
             this.IP.Size = new System.Drawing.Size(232, 55);
             this.IP.TabIndex = 1;
-            this.IP.Text = "192.168.2.35";
+            this.IP.Text = "127.0.0.1";
             // 
             // PORT
             // 

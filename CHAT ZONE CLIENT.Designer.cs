@@ -35,7 +35,7 @@
             this.IPTEXT = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.txtsend = new System.Windows.Forms.TextBox();
+            this.txtsendclient = new System.Windows.Forms.TextBox();
             this.TxtShowMessenge = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -108,13 +108,13 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork_1);
             // 
-            // txtsend
+            // txtsendclient
             // 
-            this.txtsend.Location = new System.Drawing.Point(30, 491);
-            this.txtsend.Multiline = true;
-            this.txtsend.Name = "txtsend";
-            this.txtsend.Size = new System.Drawing.Size(803, 36);
-            this.txtsend.TabIndex = 12;
+            this.txtsendclient.Location = new System.Drawing.Point(30, 491);
+            this.txtsendclient.Multiline = true;
+            this.txtsendclient.Name = "txtsendclient";
+            this.txtsendclient.Size = new System.Drawing.Size(803, 36);
+            this.txtsendclient.TabIndex = 12;
             // 
             // TxtShowMessenge
             // 
@@ -145,7 +145,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1015, 554);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtsend);
+            this.Controls.Add(this.txtsendclient);
             this.Controls.Add(this.TxtShowMessenge);
             this.Controls.Add(this.Connect);
             this.Controls.Add(this.portclient);
@@ -168,7 +168,7 @@
         private System.Windows.Forms.Label IPTEXT;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private System.Windows.Forms.TextBox txtsend;
+        private System.Windows.Forms.TextBox txtsendclient;
         private System.Windows.Forms.TextBox TxtShowMessenge;
         private System.Windows.Forms.Button button1;
     }

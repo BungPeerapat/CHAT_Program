@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.ServiceModel.Activities;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +20,7 @@ namespace SYSTEMDEMO
         public StreamReader SR;
         public StreamWriter SW;
         public string receive;
-        public string sendtxt;
+        public string sendtxtclient;
         public ChatApplicationServer()
         {
             InitializeComponent();
@@ -35,13 +36,17 @@ namespace SYSTEMDEMO
             SW.AutoFlush = true;
             backgroundWorker1.RunWorkerAsync();
             backgroundWorker2.WorkerSupportsCancellation = true;
+            if (client.Connected)
+            {
+                MessageBox.Show("Work!");
+            }
         }
 
         private void sendbutton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtsend.Text))
             {
-                sendtxt = txtsend.Text;
+                sendtxtclient = txtsend.Text;
                 backgroundWorker2.RunWorkerAsync();
             }
             txtsend.Text = "";
@@ -56,7 +61,7 @@ namespace SYSTEMDEMO
                     receive = SR.ReadLine();
                     this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtShowMessenge.AppendText("Someone : " +receive+ "\n");
+                        this.TxtShowMessenge.AppendText("Someone : " + receive + "\n");
                     }));
                     receive = "";
                 }catch(Exception ex)
@@ -72,10 +77,10 @@ namespace SYSTEMDEMO
             {
                 try
                 {
-                    SW.WriteLine(sendtxt);
+                    SW.WriteLine(sendtxtclient);
                     this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtShowMessenge.AppendText("Me : " + sendtxt + "\n");
+                        this.TxtShowMessenge.AppendText("Me : " + sendtxtclient + "\n");
                     }));
                 }catch
                 {

@@ -20,7 +20,7 @@ namespace SYSTEMDEMO
         public StreamReader SR;
         public StreamWriter SW;
         public string receive;
-        public string sendtxt;
+        public string sendtxtclient;
         public ChatApplicationClientSize()
         {
             InitializeComponent();
@@ -41,28 +41,41 @@ namespace SYSTEMDEMO
                     backgroundWorker1.RunWorkerAsync();
                     backgroundWorker2.WorkerSupportsCancellation = true;
                 }
-                if (backgroundWorker2.WorkerSupportsCancellation == true)
-                {
-                    Console.Beep();
-                    Console.Beep();
-                    MessageBox.Show("Work!!!!!");
-                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-            private void backgroundWorker2_DoWork_1(object sender, DoWorkEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtsendclient.Text))
+            {
+                if (client.Connected)
+                {
+                    Console.Beep();
+                    sendtxtclient = txtsendclient.Text;
+                    backgroundWorker2.RunWorkerAsync();
+                    Console.Beep();
+                }
+                txtsendclient.Text = "";
+                Console.Beep();
+            }
+            else
+            {
+                MessageBox.Show("Please Input Your Text.");
+            }
+        }
+        private void backgroundWorker2_DoWork_1(object sender, DoWorkEventArgs e)
         {
             if (client.Connected)
             {
                 try
                 {
-                    SW.WriteLine(sendtxt);
+                    SW.WriteLine(sendtxtclient);
                     this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtShowMessenge.AppendText("Me : " + sendtxt + "\n");
+                        this.TxtShowMessenge.AppendText("Me : " + sendtxtclient + "\n");
                     }));
                 }catch
                 {
@@ -95,20 +108,6 @@ namespace SYSTEMDEMO
         private void ipclient_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtsend.Text))
-            {
-                if (client.Connected)
-                {
-                    Console.Beep();
-                    sendtxt = txtsend.Text;
-                    backgroundWorker2.RunWorkerAsync();
-                }
-                txtsend.Text = "";
-            }
         }
     }
 }
