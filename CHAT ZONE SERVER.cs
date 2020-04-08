@@ -80,7 +80,7 @@ namespace SYSTEMDEMO
                     SW.WriteLine(sendtxtclient);
                     this.TxtShowMaessenge.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtShowMaessenge.AppendText("Me : " + txtsend + "\n");
+                        this.TxtShowMaessenge.AppendText("Me : " + sendtxtclient + "\n");
                     }));
                 }catch
                 {

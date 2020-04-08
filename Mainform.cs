@@ -28,5 +28,11 @@ namespace SYSTEMDEMO
             ChatApplicationClientSize OpenChatClientSize = new ChatApplicationClientSize();
             OpenChatClientSize.Show();
         }
+
+        private void ClientDemobotton_Click(object sender, EventArgs e)
+        {
+            CHAT_APPLICATION_CLIENT_DEMO OpenChatClientDemoSize = new CHAT_APPLICATION_CLIENT_DEMO();
+            OpenChatClientDemoSize.Show();
+        }
     }
 }
