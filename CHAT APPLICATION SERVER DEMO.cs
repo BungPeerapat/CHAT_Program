@@ -39,7 +39,9 @@ namespace SYSTEMDEMO
                 backgroundWorker1.RunWorkerAsync();
                 backgroundWorker2.WorkerSupportsCancellation = true;
                 Console.Beep();
+                Console.Beep();
                 MessageBox.Show("Create Complete.");
+                Console.Beep();
             }
             catch (Exception ex)
             {
@@ -51,11 +53,15 @@ namespace SYSTEMDEMO
         {
             if (client.Connected)
             {
-                
+                if (!string.IsNullOrEmpty(SendTextDemo.Text))
+                {
+                    sendtxtclient = SendTextDemo.Text;
+                }
             }
             else
             {
-                MessageBox.Show("You don't have any Connecttion.");            }
+                MessageBox.Show("You don't have any Connecttion.");            
+            }
         }
     }
 }
