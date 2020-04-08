@@ -38,8 +38,6 @@
             this.sendbutton = new System.Windows.Forms.Button();
             this.txtsend = new System.Windows.Forms.TextBox();
             this.TxtShowMessenge = new System.Windows.Forms.TextBox();
-            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // Connect
@@ -105,6 +103,10 @@
             this.IPTEXT.TabIndex = 7;
             this.IPTEXT.Text = "IP ADDESS :";
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork_1);
+            // 
             // sendbutton
             // 
             this.sendbutton.Font = new System.Drawing.Font("Franxurter Totally Medium", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,7 +170,5 @@
         private System.Windows.Forms.Button sendbutton;
         private System.Windows.Forms.TextBox txtsend;
         private System.Windows.Forms.TextBox TxtShowMessenge;
-        private System.ComponentModel.BackgroundWorker backgroundWorker3;
-        private System.ComponentModel.BackgroundWorker backgroundWorker4;
     }
 }

@@ -62,25 +62,6 @@ namespace SYSTEMDEMO
             }
             txtsend.Text = "";
         }
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            while (client.Connected)
-            {
-                try
-                {
-                    receive = SR.ReadLine();
-                    this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
-                    {
-                        this.TxtShowMessenge.AppendText("Someone : " + receive + "\n");
-                    }));
-                    receive = "";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
 
         private void sendbutton_Click_1(object sender, EventArgs e)
         {
@@ -91,7 +72,8 @@ namespace SYSTEMDEMO
             }
             txtsend.Text = "";
         }
-        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+
+        private void backgroundWorker2_DoWork_1(object sender, DoWorkEventArgs e)
         {
             if (client.Connected)
             {
@@ -108,6 +90,26 @@ namespace SYSTEMDEMO
                     MessageBox.Show("Error");
                 }
                 backgroundWorker2.CancelAsync();
+            }
+        }
+
+        private void backgroundWorker1_DoWork_1(object sender, DoWorkEventArgs e)
+        {
+            while (client.Connected)
+            {
+                try
+                {
+                    receive = SR.ReadLine();
+                    this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
+                    {
+                        this.TxtShowMessenge.AppendText("Someone : " + receive + "\n");
+                    }));
+                    receive = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
