@@ -49,24 +49,27 @@ namespace SYSTEMDEMO
 
         async private void SendBottonDemo_Click(object sender, EventArgs e)
         {
-            if (client.Connected)
+            while (client.Connected)
             {
-                if (!string.IsNullOrEmpty(SendTextDemoClient.Text))
+                if (client.Connected)
                 {
-                    sendtxtclient = SendTextDemoClient.Text;
-                    backgroundWorker2.RunWorkerAsync();
+                    if (!string.IsNullOrEmpty(SendTextDemoClient.Text))
+                    {
+                        sendtxtclient = SendTextDemoClient.Text;
+                        backgroundWorker2.RunWorkerAsync();
+                        Console.Beep();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You don't have any Connecttion.");
+                    Console.Beep();
+                    Console.Beep();
                     Console.Beep();
                 }
+                await TimeDelay1Second();
+                SendTextDemoClient.Text = "";
             }
-            else
-            {
-                MessageBox.Show("You don't have any Connecttion.");
-                Console.Beep();
-                Console.Beep();
-                Console.Beep();
-            }
-            await TimeDelay1Second();
-            SendTextDemoClient.Text = "";
         }
         async Task TimeDelay1Second() //Delay Time
         {
