@@ -21,6 +21,7 @@ namespace SYSTEMDEMO
         public StreamWriter SW;
         public string receive;
         public string sendtxtclient;
+        private string sendtxt;
         public ChatApplicationClientSize()
         {
             InitializeComponent();
@@ -53,21 +54,11 @@ namespace SYSTEMDEMO
                 MessageBox.Show(ex.Message);
             }
         }
-        private void sendbutton_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtsend.Text))
-            {
-                sendtxtclient = txtsend.Text;
-                backgroundWorker2.RunWorkerAsync();
-            }
-            txtsend.Text = "";
-        }
-
         private void sendbutton_Click_1(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtsend.Text))
+            if (txtsend != null)
             {
-                sendtxtclient = txtsend.Text;
+                sendtxt = txtsend.Text;
                 backgroundWorker2.RunWorkerAsync();
             }
             txtsend.Text = "";
