@@ -38,11 +38,24 @@ namespace SYSTEMDEMO
                 SW.AutoFlush = true;
                 backgroundWorker1.RunWorkerAsync();
                 backgroundWorker2.WorkerSupportsCancellation = true;
+                Console.Beep();
+                MessageBox.Show("Create Complete.");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void SendTextBotton_Click(object sender, EventArgs e)
+        {
+            if (client.Connected)
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("You don't have any Connecttion.");            }
         }
     }
 }

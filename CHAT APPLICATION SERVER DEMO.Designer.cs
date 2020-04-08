@@ -66,6 +66,7 @@
             this.SendTextBotton.TabIndex = 2;
             this.SendTextBotton.Text = "SEND";
             this.SendTextBotton.UseVisualStyleBackColor = true;
+            this.SendTextBotton.Click += new System.EventHandler(this.SendTextBotton_Click);
             // 
             // IPSERVER
             // 
