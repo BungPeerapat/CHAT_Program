@@ -96,7 +96,15 @@ namespace SYSTEMDEMO
             {
                 if (client.Connected)
                 {
-
+                    SW.WriteLine(SendTextDemo.Text);
+                    this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
+                    {
+                        this.TxtMessageDemo.AppendText("Me : " + SendTextDemo + "\n");
+                    }));
+                }
+                else
+                {
+                    MessageBox.Show("SYSTEM : Client Don't Connected");
                 }
             }
             catch (Exception ex)
