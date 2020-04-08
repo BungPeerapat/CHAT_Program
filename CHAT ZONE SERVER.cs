@@ -59,9 +59,9 @@ namespace SYSTEMDEMO
                 try
                 {
                     receive = SR.ReadLine();
-                    this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
+                    this.TxtShowMaessenge.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtShowMessenge.AppendText("Someone : " + receive + "\n");
+                        this.TxtShowMaessenge.AppendText("Someone : " + receive + "\n");
                     }));
                     receive = "";
                 }catch(Exception ex)
@@ -78,9 +78,9 @@ namespace SYSTEMDEMO
                 try
                 {
                     SW.WriteLine(sendtxtclient);
-                    this.TxtShowMessenge.Invoke(new MethodInvoker(delegate ()
+                    this.TxtShowMaessenge.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtShowMessenge.AppendText("Me : " + sendtxtclient + "\n");
+                        this.TxtShowMaessenge.AppendText("Me : " + txtsend + "\n");
                     }));
                 }catch
                 {
@@ -88,6 +88,11 @@ namespace SYSTEMDEMO
                 }
                 backgroundWorker2.CancelAsync();
             }
+        }
+
+        private void TxtShowMessenge_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

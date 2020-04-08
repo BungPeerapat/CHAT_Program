@@ -34,7 +34,7 @@
             this.IP = new System.Windows.Forms.TextBox();
             this.PORT = new System.Windows.Forms.TextBox();
             this.btnstartserver = new System.Windows.Forms.Button();
-            this.TxtShowMessenge = new System.Windows.Forms.TextBox();
+            this.TxtShowMaessenge = new System.Windows.Forms.TextBox();
             this.txtsend = new System.Windows.Forms.TextBox();
             this.sendbutton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -104,16 +104,17 @@
             this.btnstartserver.UseVisualStyleBackColor = false;
             this.btnstartserver.Click += new System.EventHandler(this.btnstartserver_Click);
             // 
-            // TxtShowMessenge
+            // TxtShowMaessenge
             // 
-            this.TxtShowMessenge.BackColor = System.Drawing.Color.Black;
-            this.TxtShowMessenge.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F);
-            this.TxtShowMessenge.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.TxtShowMessenge.Location = new System.Drawing.Point(35, 176);
-            this.TxtShowMessenge.Multiline = true;
-            this.TxtShowMessenge.Name = "TxtShowMessenge";
-            this.TxtShowMessenge.Size = new System.Drawing.Size(953, 324);
-            this.TxtShowMessenge.TabIndex = 3;
+            this.TxtShowMaessenge.BackColor = System.Drawing.Color.Black;
+            this.TxtShowMaessenge.Font = new System.Drawing.Font("Franxurter Totally Medium", 28.2F);
+            this.TxtShowMaessenge.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.TxtShowMaessenge.Location = new System.Drawing.Point(35, 176);
+            this.TxtShowMaessenge.Multiline = true;
+            this.TxtShowMaessenge.Name = "TxtShowMaessenge";
+            this.TxtShowMaessenge.Size = new System.Drawing.Size(953, 324);
+            this.TxtShowMaessenge.TabIndex = 3;
+            this.TxtShowMaessenge.TextChanged += new System.EventHandler(this.TxtShowMessenge_TextChanged);
             // 
             // txtsend
             // 
@@ -151,7 +152,7 @@
             this.ClientSize = new System.Drawing.Size(1011, 550);
             this.Controls.Add(this.sendbutton);
             this.Controls.Add(this.txtsend);
-            this.Controls.Add(this.TxtShowMessenge);
+            this.Controls.Add(this.TxtShowMaessenge);
             this.Controls.Add(this.btnstartserver);
             this.Controls.Add(this.PORT);
             this.Controls.Add(this.IP);
@@ -173,7 +174,7 @@
         private System.Windows.Forms.TextBox IP;
         private System.Windows.Forms.TextBox PORT;
         private System.Windows.Forms.Button btnstartserver;
-        private System.Windows.Forms.TextBox TxtShowMessenge;
+        private System.Windows.Forms.TextBox TxtShowMaessenge;
         private System.Windows.Forms.TextBox txtsend;
         private System.Windows.Forms.Button sendbutton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;

@@ -126,6 +126,7 @@
             this.TxtShowMessenge.Name = "TxtShowMessenge";
             this.TxtShowMessenge.Size = new System.Drawing.Size(953, 324);
             this.TxtShowMessenge.TabIndex = 11;
+            this.TxtShowMessenge.TextChanged += new System.EventHandler(this.TxtShowMessenge_TextChanged);
             // 
             // button1
             // 

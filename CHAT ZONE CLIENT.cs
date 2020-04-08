@@ -44,7 +44,7 @@ namespace SYSTEMDEMO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show(ex.Message);
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -106,6 +106,11 @@ namespace SYSTEMDEMO
         }
 
         private void ipclient_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtShowMessenge_TextChanged(object sender, EventArgs e)
         {
 
         }
