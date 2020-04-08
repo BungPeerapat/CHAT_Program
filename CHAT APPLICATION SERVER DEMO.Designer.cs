@@ -32,7 +32,7 @@
             this.SendTextDemo = new System.Windows.Forms.TextBox();
             this.SendTextBotton = new System.Windows.Forms.Button();
             this.IPSERVER = new System.Windows.Forms.TextBox();
-            this.PORTSERVER = new System.Windows.Forms.TextBox();
+            this.PORT = new System.Windows.Forms.TextBox();
             this.CreateServerBotton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
@@ -76,13 +76,13 @@
             this.IPSERVER.TabIndex = 3;
             this.IPSERVER.Text = "127.0.0.1";
             // 
-            // PORTSERVER
+            // PORT
             // 
-            this.PORTSERVER.Location = new System.Drawing.Point(12, 39);
-            this.PORTSERVER.Name = "PORTSERVER";
-            this.PORTSERVER.Size = new System.Drawing.Size(60, 22);
-            this.PORTSERVER.TabIndex = 4;
-            this.PORTSERVER.Text = "1443";
+            this.PORT.Location = new System.Drawing.Point(12, 39);
+            this.PORT.Name = "PORT";
+            this.PORT.Size = new System.Drawing.Size(60, 22);
+            this.PORT.TabIndex = 4;
+            this.PORT.Text = "1443";
             // 
             // CreateServerBotton
             // 
@@ -111,7 +111,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(971, 543);
             this.Controls.Add(this.CreateServerBotton);
-            this.Controls.Add(this.PORTSERVER);
+            this.Controls.Add(this.PORT);
             this.Controls.Add(this.IPSERVER);
             this.Controls.Add(this.SendTextBotton);
             this.Controls.Add(this.SendTextDemo);
@@ -130,7 +130,7 @@
         private System.Windows.Forms.TextBox SendTextDemo;
         private System.Windows.Forms.Button SendTextBotton;
         private System.Windows.Forms.TextBox IPSERVER;
-        private System.Windows.Forms.TextBox PORTSERVER;
+        private System.Windows.Forms.TextBox PORT;
         private System.Windows.Forms.Button CreateServerBotton;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;

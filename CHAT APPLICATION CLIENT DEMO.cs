@@ -32,6 +32,7 @@ namespace SYSTEMDEMO
             IPEndPoint ip_end = new IPEndPoint(IPAddress.Parse(IPDEMO.Text), int.Parse(PORTDEMO.Text));
             try
             {
+                client.Connect(ip_end);
                 if (client.Connected)
                 {
                     MessageBox.Show("Connected!");
