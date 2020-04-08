@@ -41,7 +41,7 @@ namespace SYSTEMDEMO
                     backgroundWorker1.RunWorkerAsync();
                     backgroundWorker2.WorkerSupportsCancellation = true;
                 }
-                if (backgroundWorker2.WorkerSupportsCancellation == true)
+                if (backgroundWorker2.WorkerSupportsCancellation == false)
                 {
                     Console.Beep();
                     Console.Beep();
