@@ -28,18 +28,18 @@ namespace SYSTEMDEMO
 
         private void CreateServerBotton_Click(object sender, EventArgs e)
         {
-                TcpListener clientConnected = new TcpListener(IPAddress.Any, int.Parse(PORTSERVER.Text));
-                clientConnected.Start();
-                client = clientConnected.AcceptTcpClient();
-                SR = new StreamReader(client.GetStream());
-                SW = new StreamWriter(client.GetStream());
-                SW.AutoFlush = true;
-                backgroundWorker1.RunWorkerAsync();
-                backgroundWorker2.WorkerSupportsCancellation = true;
-                Console.Beep();
-                Console.Beep();
-                MessageBox.Show("Create Complete.");
-                Console.Beep();
+            TcpListener clientConnected = new TcpListener(IPAddress.Any, int.Parse(PORTSERVER.Text));
+            clientConnected.Start();
+            client = clientConnected.AcceptTcpClient();
+            SR = new StreamReader(client.GetStream());
+            SW = new StreamWriter(client.GetStream());
+            SW.AutoFlush = true;
+            backgroundWorker1.RunWorkerAsync();
+            backgroundWorker2.WorkerSupportsCancellation = true;
+            Console.Beep();
+            Console.Beep();
+            MessageBox.Show("Create Complete.");
+            Console.Beep();
         }
 
         async Task TimeDelay1Second()
