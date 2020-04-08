@@ -53,18 +53,7 @@ namespace SYSTEMDEMO
                 MessageBox.Show(ex.Message);
             }
         }
-        private void sendbutton_Click_1(object sender, EventArgs e)
-        {
-            if (txtsend != null)
-            {
-                Console.Beep();
-                sendtxt = txtsend.Text;
-                backgroundWorker2.RunWorkerAsync();
-            }
-            txtsend.Text = "";
-        }
-
-        private void backgroundWorker2_DoWork_1(object sender, DoWorkEventArgs e)
+            private void backgroundWorker2_DoWork_1(object sender, DoWorkEventArgs e)
         {
             if (client.Connected)
             {

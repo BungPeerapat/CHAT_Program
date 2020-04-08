@@ -35,9 +35,9 @@
             this.IPTEXT = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.sendbutton = new System.Windows.Forms.Button();
             this.txtsend = new System.Windows.Forms.TextBox();
             this.TxtShowMessenge = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Connect
@@ -107,17 +107,6 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork_1);
             // 
-            // sendbutton
-            // 
-            this.sendbutton.Font = new System.Drawing.Font("Franxurter Totally Medium", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendbutton.Location = new System.Drawing.Point(855, 491);
-            this.sendbutton.Name = "sendbutton";
-            this.sendbutton.Size = new System.Drawing.Size(127, 35);
-            this.sendbutton.TabIndex = 13;
-            this.sendbutton.Text = "Send";
-            this.sendbutton.UseVisualStyleBackColor = true;
-            this.sendbutton.Click += new System.EventHandler(this.sendbutton_Click_1);
-            // 
             // txtsend
             // 
             this.txtsend.Location = new System.Drawing.Point(30, 491);
@@ -137,13 +126,23 @@
             this.TxtShowMessenge.Size = new System.Drawing.Size(953, 324);
             this.TxtShowMessenge.TabIndex = 11;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Franxurter Totally Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(849, 491);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 35);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "SEND";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ChatApplicationClientSize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1015, 554);
-            this.Controls.Add(this.sendbutton);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtsend);
             this.Controls.Add(this.TxtShowMessenge);
             this.Controls.Add(this.Connect);
@@ -167,8 +166,8 @@
         private System.Windows.Forms.Label IPTEXT;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private System.Windows.Forms.Button sendbutton;
         private System.Windows.Forms.TextBox txtsend;
         private System.Windows.Forms.TextBox TxtShowMessenge;
+        private System.Windows.Forms.Button button1;
     }
 }
