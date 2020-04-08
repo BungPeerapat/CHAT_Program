@@ -72,7 +72,7 @@
             // 
             this.IPSERVER.Location = new System.Drawing.Point(12, 11);
             this.IPSERVER.Name = "IPSERVER";
-            this.IPSERVER.Size = new System.Drawing.Size(60, 22);
+            this.IPSERVER.Size = new System.Drawing.Size(99, 22);
             this.IPSERVER.TabIndex = 3;
             this.IPSERVER.Text = "127.0.0.1";
             // 

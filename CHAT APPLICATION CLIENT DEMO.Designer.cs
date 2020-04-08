@@ -51,7 +51,7 @@
             // 
             this.IPDEMO.Location = new System.Drawing.Point(9, 17);
             this.IPDEMO.Name = "IPDEMO";
-            this.IPDEMO.Size = new System.Drawing.Size(61, 22);
+            this.IPDEMO.Size = new System.Drawing.Size(88, 22);
             this.IPDEMO.TabIndex = 1;
             this.IPDEMO.Text = "127.0.0.1";
             // 
