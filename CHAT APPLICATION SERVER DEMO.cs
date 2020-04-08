@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SYSTEMDEMO
 {
-    public partial class Form1 : Form
+    public partial class CHAT_APPLICATION_SERVER_DEMO : Form
     {
-        public Form1()
+        public CHAT_APPLICATION_SERVER_DEMO()
         {
             InitializeComponent();
         }
