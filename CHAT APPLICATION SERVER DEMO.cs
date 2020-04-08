@@ -57,11 +57,15 @@ namespace SYSTEMDEMO
                 {
                     sendtxtclient = SendTextDemo.Text;
                     backgroundWorker2.RunWorkerAsync();
+                    Console.Beep();
                 }
             }
             else
             {
-                MessageBox.Show("You don't have any Connecttion.");            
+                MessageBox.Show("You don't have any Connecttion.");
+                Console.Beep();
+                Console.Beep();
+                Console.Beep();
             }
         }
 
@@ -100,7 +104,7 @@ namespace SYSTEMDEMO
                     SW.WriteLine(SendTextDemo.Text);
                     this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
                     {
-                        this.TxtMessageDemo.AppendText("Me : " + SendTextDemo + "\n");
+                        this.TxtMessageDemo.AppendText("Me : " + SendTextDemo.Text + "\n");
                     }));
                     await Time05Delay();
                 }

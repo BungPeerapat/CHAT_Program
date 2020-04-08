@@ -52,22 +52,22 @@ namespace SYSTEMDEMO
         {
             if (client.Connected)
             {
-                if (!string.IsNullOrEmpty(SendTextDemo.Text))
+                if (!string.IsNullOrEmpty(SendTextDemoClient.Text))
                 {
-                    sendtxtclient = SendTextDemo.Text;
+                    sendtxtclient = SendTextDemoClient.Text;
                     backgroundWorker2.RunWorkerAsync();
                     Console.Beep();
                 }
             }
             else
             {
-                MessageBox.Show("Connect to Server Fail.");
+                MessageBox.Show("You don't have any Connecttion.");
                 Console.Beep();
                 Console.Beep();
                 Console.Beep();
             }
             await TimeDelay1Second();
-            SendTextDemo.Text = "";
+            SendTextDemoClient.Text = "";
         }
         async Task TimeDelay1Second() //Delay Time
         {
@@ -104,7 +104,7 @@ namespace SYSTEMDEMO
         {
             try
             {
-                if (client.Connected)
+                if (client.Connected == true)
                 {
                     SW.WriteLine(sendtxtclient);
                     this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()

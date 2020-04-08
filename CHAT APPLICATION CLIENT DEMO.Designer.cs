@@ -32,7 +32,7 @@
             this.IPDEMO = new System.Windows.Forms.TextBox();
             this.PORTDEMO = new System.Windows.Forms.TextBox();
             this.ConnectBotton = new System.Windows.Forms.Button();
-            this.SendTextDemo = new System.Windows.Forms.TextBox();
+            this.SendTextDemoClient = new System.Windows.Forms.TextBox();
             this.SendBottonDemo = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
@@ -73,15 +73,15 @@
             this.ConnectBotton.UseVisualStyleBackColor = true;
             this.ConnectBotton.Click += new System.EventHandler(this.ConnectBotton_Click);
             // 
-            // SendTextDemo
+            // SendTextDemoClient
             // 
-            this.SendTextDemo.Font = new System.Drawing.Font("Franxurter Totally Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SendTextDemo.Location = new System.Drawing.Point(4, 561);
-            this.SendTextDemo.Multiline = true;
-            this.SendTextDemo.Name = "SendTextDemo";
-            this.SendTextDemo.Size = new System.Drawing.Size(941, 49);
-            this.SendTextDemo.TabIndex = 4;
-            this.SendTextDemo.TextChanged += new System.EventHandler(this.SendTextDemo_TextChanged);
+            this.SendTextDemoClient.Font = new System.Drawing.Font("Franxurter Totally Medium", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SendTextDemoClient.Location = new System.Drawing.Point(4, 561);
+            this.SendTextDemoClient.Multiline = true;
+            this.SendTextDemoClient.Name = "SendTextDemoClient";
+            this.SendTextDemoClient.Size = new System.Drawing.Size(941, 49);
+            this.SendTextDemoClient.TabIndex = 4;
+            this.SendTextDemoClient.TextChanged += new System.EventHandler(this.SendTextDemo_TextChanged);
             // 
             // SendBottonDemo
             // 
@@ -108,7 +108,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1139, 622);
             this.Controls.Add(this.SendBottonDemo);
-            this.Controls.Add(this.SendTextDemo);
+            this.Controls.Add(this.SendTextDemoClient);
             this.Controls.Add(this.ConnectBotton);
             this.Controls.Add(this.PORTDEMO);
             this.Controls.Add(this.IPDEMO);
@@ -126,7 +126,7 @@
         private System.Windows.Forms.TextBox IPDEMO;
         private System.Windows.Forms.TextBox PORTDEMO;
         private System.Windows.Forms.Button ConnectBotton;
-        private System.Windows.Forms.TextBox SendTextDemo;
+        private System.Windows.Forms.TextBox SendTextDemoClient;
         private System.Windows.Forms.Button SendBottonDemo;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
