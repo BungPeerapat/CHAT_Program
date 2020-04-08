@@ -53,7 +53,7 @@ namespace SYSTEMDEMO
         {
             await Task.Delay(1000);
         }
-        async private void SendTextBotton_Click(object sender, EventArgs e)
+        private void SendTextBotton_Click(object sender, EventArgs e)
         {
             if (client.Connected)
             {
@@ -69,13 +69,18 @@ namespace SYSTEMDEMO
             }
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //ตัวรับ
+        async private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //ตัวรับ
         {
             while (client.Connected)
             {
                 try
                 {
-
+                    receive = SR.ReadLine();
+                    this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
+                    {
+                        this.TxtMessageDemo.AppendText("Someone : " + receive + "\n");
+                    }));
+                    await TimeDelay1Second();
                 }
                 catch (Exception ex)
                 {
