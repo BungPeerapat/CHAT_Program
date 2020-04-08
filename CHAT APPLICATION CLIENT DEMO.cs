@@ -19,8 +19,8 @@ namespace SYSTEMDEMO
         private TcpClient client;
         public StreamReader SR;
         public StreamWriter SW;
-        public string receive;
-        public string sendtxtclient;
+        public string receive; //ตัวรับ
+        public string sendtxtclient; //ตัวส่ง
         public CHAT_APPLICATION_CLIENT_DEMO()
         {
             InitializeComponent();
@@ -54,7 +54,6 @@ namespace SYSTEMDEMO
                 if (!string.IsNullOrEmpty(SendTextDemo.Text))
                 {
                     sendtxtclient = SendTextDemo.Text;
-
                     SW.WriteLine(sendtxtclient);
                     backgroundWorker2.RunWorkerAsync();
                     Console.Beep();
@@ -69,13 +68,13 @@ namespace SYSTEMDEMO
             }
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //1 เป็นตัวรับ
         {
             while (client.Connected)
             {
                 try
                 {
-                    
+                    SR.ReadLine(receive);
                 }
                 catch (Exception ex)
                 {
