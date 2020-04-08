@@ -81,6 +81,7 @@ namespace SYSTEMDEMO
                         this.TxtMessageDemo.AppendText("Someone : " + receive + "\n");
                     }));
                     await TimeDelay1Second();
+                    receive = "";
                 }
                 catch (Exception ex)
                 {
@@ -91,7 +92,17 @@ namespace SYSTEMDEMO
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e) //ตัวส่ง
         {
+            try
+            {
+                if (client.Connected)
+                {
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
