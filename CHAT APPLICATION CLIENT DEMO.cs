@@ -68,10 +68,9 @@ namespace SYSTEMDEMO
             }
             SendTextDemo.Text = "";
         }
-
-        async TimeDelay1Second()
+        async Task TimeDelay1Second() //Delay Time
         {
-
+            await Task.Delay(1000);
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //1 เป็นตัวรับ
