@@ -81,6 +81,7 @@
             this.SendTextDemo.Name = "SendTextDemo";
             this.SendTextDemo.Size = new System.Drawing.Size(941, 49);
             this.SendTextDemo.TabIndex = 4;
+            this.SendTextDemo.TextChanged += new System.EventHandler(this.SendTextDemo_TextChanged);
             // 
             // SendBottonDemo
             // 

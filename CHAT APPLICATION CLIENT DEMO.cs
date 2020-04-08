@@ -119,5 +119,10 @@ namespace SYSTEMDEMO
             }
 
         }
+
+        private void SendTextDemo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
