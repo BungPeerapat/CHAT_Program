@@ -49,8 +49,6 @@ namespace SYSTEMDEMO
 
         async private void SendBottonDemo_Click(object sender, EventArgs e)
         {
-            while (client.Connected)
-            {
                 if (client.Connected)
                 {
                     if (!string.IsNullOrEmpty(SendTextDemoClient.Text))
@@ -69,14 +67,13 @@ namespace SYSTEMDEMO
                 }
                 await TimeDelay1Second();
                 SendTextDemoClient.Text = "";
-            }
         }
         async Task TimeDelay1Second() //Delay Time
         {
             await Task.Delay(1000);
         }
 
-        async private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //1 เป็นตัวรับ
+        async private void backgroundWorker1_DoWork(object reader, DoWorkEventArgs e) //1 เป็นตัวรับ
         {
             while (client.Connected)
             {

@@ -68,7 +68,7 @@ namespace SYSTEMDEMO
             }
         }
 
-        async private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e) //ตัวรับ
+        async private void backgroundWorker1_DoWork(object reader, DoWorkEventArgs e) //ตัวรับ
         {
             while (client.Connected)
             {
@@ -101,10 +101,7 @@ namespace SYSTEMDEMO
                 try
                 {
                     SW.WriteLine(SendTextDemo.Text);
-                    this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
-                    {
-                        this.TxtMessageDemo.AppendText("Me : " + SendTextDemo.Text + "\n");
-                    }));
+                    this.TxtMessageDemo.AppendText("Someone : " + receive + "\n");
                     await Time05Delay();
                 }
                 catch (Exception ex)
