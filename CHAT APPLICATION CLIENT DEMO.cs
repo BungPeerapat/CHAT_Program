@@ -53,12 +53,34 @@ namespace SYSTEMDEMO
             {
                 if (!string.IsNullOrEmpty(SendTextDemo.Text))
                 {
+                    sendtxtclient = SendTextDemo.Text;
 
+                    SW.WriteLine(sendtxtclient);
+                    backgroundWorker2.RunWorkerAsync();
+                    Console.Beep();
                 }
             }
             else
             {
-                MessageBox.Show
+                MessageBox.Show("Connect to Server Fail.");
+                Console.Beep();
+                Console.Beep();
+                Console.Beep();
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            while (client.Connected)
+            {
+                try
+                {
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

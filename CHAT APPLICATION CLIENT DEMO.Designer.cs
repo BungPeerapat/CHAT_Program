@@ -90,6 +90,10 @@
             this.SendBottonDemo.UseVisualStyleBackColor = true;
             this.SendBottonDemo.Click += new System.EventHandler(this.SendBottonDemo_Click);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // CHAT_APPLICATION_CLIENT_DEMO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
