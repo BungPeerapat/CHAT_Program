@@ -74,7 +74,7 @@ namespace SYSTEMDEMO
             {
                 try
                 {
-                    receive = SR.ReadToEnd();
+                    receive = SR.ReadLine();
                     this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
                     {
                         this.TxtMessageDemo.AppendText("Someone : " + receive + "\n");
