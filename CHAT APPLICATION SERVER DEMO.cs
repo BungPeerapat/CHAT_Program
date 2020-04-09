@@ -74,7 +74,7 @@ namespace SYSTEMDEMO
             {
                 try
                 {
-                    receive = SR.ReadLine();
+                    receive = SR.ReadToEnd();
                     this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
                     {
                         this.TxtMessageDemo.AppendText("Someone : " + receive + "\n");
@@ -96,22 +96,21 @@ namespace SYSTEMDEMO
 
         async private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e) //ตัวส่ง
         {
-            if (client.Connected)
+            try
             {
-                try
+                if (client.Connected == true)
                 {
-                    SW.WriteLine(SendTextDemo.Text);
-                    this.TxtMessageDemo.AppendText("Someone : " + receive + "\n");
+                    SW.WriteLine(sendtxtclient);
+                    this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
+                    {
+                        this.TxtMessageDemo.AppendText("Me : " + sendtxtclient + "\n");
+                    }));
                     await Time05Delay();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("SYSTEM : Client Don't Connected");
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -79,7 +79,7 @@ namespace SYSTEMDEMO
             {
                 try
                 {
-                    receive = SR.ReadLine();
+                    receive = SR.ReadToEnd();
                     this.TxtMessageDemo.Invoke(new MethodInvoker(delegate ()
                     {
                         this.TxtMessageDemo.AppendText("Someone : " + receive + "\n");
@@ -116,7 +116,6 @@ namespace SYSTEMDEMO
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
         private void SendTextDemo_TextChanged(object sender, EventArgs e)
         {
